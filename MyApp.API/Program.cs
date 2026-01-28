@@ -1,8 +1,13 @@
+using MyApp.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddInfrastructureDI(builder.Configuration);
+
 builder.Services.AddControllers();
+
 
 var app = builder.Build();
 
