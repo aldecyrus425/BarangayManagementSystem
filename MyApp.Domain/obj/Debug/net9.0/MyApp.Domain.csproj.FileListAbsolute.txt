@@ -1,0 +1,13 @@
+C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Domain\bin\Debug\net9.0\MyApp.Domain.deps.json
+C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Domain\bin\Debug\net9.0\MyApp.Domain.dll
+C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Domain\bin\Debug\net9.0\MyApp.Domain.pdb
+C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.AssemblyInfo.cs
+C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.sourcelink.json
+C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.dll
+C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Domain\obj\Debug\net9.0\refint\MyApp.Domain.dll
+C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.pdb
+C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Domain\obj\Debug\net9.0\ref\MyApp.Domain.dll
