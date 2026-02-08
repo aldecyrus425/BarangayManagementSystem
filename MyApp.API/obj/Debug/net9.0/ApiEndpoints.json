@@ -1,5 +1,84 @@
 [
   {
+    "ContainingType": "MyApp.API.Controllers.OrdinanceController",
+    "Method": "GetAllOrdinance",
+    "RelativePath": "api/ordinance",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApp.API.Controllers.OrdinanceController",
+    "Method": "AddOrdinance",
+    "RelativePath": "api/ordinance",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MyApp.Application.DTO.AddOrdinanceDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApp.API.Controllers.OrdinanceController",
+    "Method": "GetOrdinanceById",
+    "RelativePath": "api/ordinance/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApp.API.Controllers.OrdinanceController",
+    "Method": "UpdateOrdinance",
+    "RelativePath": "api/ordinance/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MyApp.Application.DTO.UpdateOrdinanceDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApp.API.Controllers.OrdinanceController",
+    "Method": "DeleteOrdinance",
+    "RelativePath": "api/ordinance/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MyApp.API.Controllers.ResidentController",
     "Method": "GetAllResident",
     "RelativePath": "api/resident",

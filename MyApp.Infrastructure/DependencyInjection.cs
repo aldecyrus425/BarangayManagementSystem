@@ -35,6 +35,9 @@ namespace MyApp.Infrastructure
             services.AddScoped<IResidentRegistrationServices, ResidentRegistrationService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+            services.AddScoped<IOrdinanceServices, OrdinanceServices>();
+            services.AddScoped<IOrdinanceRepository, OrdinanceRepository>();
+
             return services;
         }
     }
