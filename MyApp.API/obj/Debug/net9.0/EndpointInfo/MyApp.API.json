@@ -5,6 +5,120 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/complainant": {
+      "get": {
+        "tags": [
+          "Complainant"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Complainant"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddComplainantDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddComplainantDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddComplainantDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Complainant"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateComplainantDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateComplainantDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateComplainantDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/complainant/{id}": {
+      "get": {
+        "tags": [
+          "Complainant"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Complainant"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/ordinance": {
       "get": {
         "tags": [
@@ -383,6 +497,32 @@
   },
   "components": {
     "schemas": {
+      "AddComplainantDTO": {
+        "type": "object",
+        "properties": {
+          "complainantFirstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "complainantLastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "complainantAge": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "complainantAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "complainantContact": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "AddOrdinanceDTO": {
         "type": "object",
         "properties": {
@@ -529,6 +669,36 @@
             "nullable": true
           },
           "nationality": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateComplainantDTO": {
+        "type": "object",
+        "properties": {
+          "complainantID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "complainantFirstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "complainantLastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "complainantAge": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "complainantAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "complainantContact": {
             "type": "string",
             "nullable": true
           }

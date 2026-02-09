@@ -13,6 +13,6 @@ namespace MyApp.Application.Interfaces.Services
         Task<ResponseDTO<ComplainantDTO>> GetComplainantByIdAsync(int id);
         Task<ResponseDTO<ComplainantDTO>> AddComplainantAsync(AddComplainantDTO dto);
         Task<ResponseDTO<bool>> DeleteComplainantAsync(int id);
-        Task<ResponseDTO<ComplainantDTO>> UpdateComplainantAsync(int id, UpdateComplainantDTO dto);
+        Task<ResponseDTO<ComplainantDTO>> UpdateComplainantAsync(UpdateComplainantDTO dto);
     }
 }
