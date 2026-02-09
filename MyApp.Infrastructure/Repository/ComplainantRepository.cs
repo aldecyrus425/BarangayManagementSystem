@@ -1,4 +1,5 @@
-﻿using MyApp.Application.Interfaces.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using MyApp.Application.Interfaces.Repositories;
 using MyApp.Domain.Entities;
 using MyApp.Infrastructure.Persistence;
 using System;
@@ -18,29 +19,46 @@ namespace MyApp.Infrastructure.Repository
             _context = context;
         }
 
-        public Task<Complainant> AddComplainantAsync(Complainant complainant)
+        public async Task<Complainant> AddComplainantAsync(Complainant complainant)
         {
-            throw new NotImplementedException();
+            await _context.Complainants.AddAsync(complainant);
+            await _context.SaveChangesAsync();
+
+            return complainant;
         }
 
-        public Task<bool> DeleteComplainantAsync(int id)
+        public async Task<bool> DeleteComplainantAsync(int id)
         {
-            throw new NotImplementedException();
+            var complainant = await _context.Complainants.FirstOrDefaultAsync(c => c.ComplainantId == id);
+            if (complainant == null)
+                return false;
+
+            _context.Complainants.Remove(complainant);
+
+            return true;
         }
 
-        public Task<IEnumerable<Complainant>> GetAllComplainantsAsync()
+        public async Task<IEnumerable<Complainant>> GetAllComplainantsAsync()
         {
-            throw new NotImplementedException();
+            var complainants = await _context.Complainants
+                .AsNoTracking()
+                .ToListAsync();
+
+            return complainants;
         }
 
         public Task<Complainant?> GetComplainantByIDAsync(int id)
         {
-            throw new NotImplementedException();
+            var complainants = _context.Complainants.FirstOrDefaultAsync(c => c.ComplainantId == id);
+            if (complainants == null)
+                return null;
+
+            return complainants;
         }
 
-        public Task SaveChangesAsync()
+        public async Task SaveChangesAsync()
         {
-            throw new NotImplementedException();
+            await _context.SaveChangesAsync();
         }
     }
 }
