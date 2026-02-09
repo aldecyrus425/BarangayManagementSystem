@@ -23,7 +23,7 @@ namespace MyApp.Application.Services
         {
             try
             {
-                var complainant = new Complainant(dto.ComplainantFirstName, dto.ComplainantLastName, dto.ComplainantAge, dto.ComplainantAddress, dto.ComplainantContact);
+                var complainant = new Complainant(dto.ComplainantFirstName, dto.ComplainantLastName, dto.ComplainantAge, dto.ComplainantAddress, dto.ComplainantContact, dto.UserId);
                 var response = await _complainantRepository.AddComplainantAsync(complainant);
 
                 return new ResponseDTO<ComplainantDTO>
@@ -37,7 +37,8 @@ namespace MyApp.Application.Services
                         ComplainantLastName = response.ComplainantLastName,
                         ComplainantAge = response.ComplainantAge,
                         ComplainantAddress = response.ComplainantAddress,
-                        ComplainantContact = response.ComplainantContact
+                        ComplainantContact = response.ComplainantContact,
+                        UserId = dto.UserId,
                     }
                 };
                 
