@@ -1,5 +1,79 @@
 [
   {
+    "ContainingType": "MyApp.API.Controllers.ComplainantController",
+    "Method": "GetAllComplainant",
+    "RelativePath": "api/complainant",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApp.API.Controllers.ComplainantController",
+    "Method": "AddComplainant",
+    "RelativePath": "api/complainant",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MyApp.Application.DTO.AddComplainantDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApp.API.Controllers.ComplainantController",
+    "Method": "UpdateComplainant",
+    "RelativePath": "api/complainant",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MyApp.Application.DTO.UpdateComplainantDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApp.API.Controllers.ComplainantController",
+    "Method": "GetComplainantByID",
+    "RelativePath": "api/complainant/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApp.API.Controllers.ComplainantController",
+    "Method": "DeleteComplainant",
+    "RelativePath": "api/complainant/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MyApp.API.Controllers.OrdinanceController",
     "Method": "GetAllOrdinance",
     "RelativePath": "api/ordinance",

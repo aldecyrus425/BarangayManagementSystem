@@ -155,11 +155,11 @@ namespace MyApp.Application.Services
             }
         }
 
-        public async Task<ResponseDTO<ComplainantDTO>> UpdateComplainantAsync(int id, UpdateComplainantDTO dto)
+        public async Task<ResponseDTO<ComplainantDTO>> UpdateComplainantAsync(UpdateComplainantDTO dto)
         {
             try
             {
-                var complainant = await _complainantRepository.GetComplainantByIDAsync(id);
+                var complainant = await _complainantRepository.GetComplainantByIDAsync(dto.ComplainantID);
                 if(complainant == null)
                 {
                     return new ResponseDTO<ComplainantDTO>

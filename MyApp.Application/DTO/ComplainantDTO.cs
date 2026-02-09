@@ -30,6 +30,7 @@ namespace MyApp.Application.DTO
 
     public class UpdateComplainantDTO
     {
+        public int ComplainantID {  get; set; }
         public string ComplainantFirstName { get; set; }
         public string ComplainantLastName { get; set; }
         public int ComplainantAge { get; set; }
