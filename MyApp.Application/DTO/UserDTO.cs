@@ -16,6 +16,12 @@ namespace MyApp.Application.DTO
 
     }
 
+    public class GetUserDTO
+    {
+        public int UserId { get; set; }
+        public GetResidentDTO Resident { get; set; }
+    }
+
     public class AddUserDTO
     {
         public string Username { get; set; }
