@@ -1,4 +1,5 @@
-﻿using MyApp.Application.Interfaces.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using MyApp.Application.Interfaces.Repositories;
 using MyApp.Domain.Entities;
 using MyApp.Infrastructure.Persistence;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MyApp.Infrastructure.Repository
 {
-    public class BlotterResidentRepository : IBlotterDefendantRepository
+    public class BlotterResidentRepository : IBlotterResidentRepository
     {
         private readonly ApplicationDBContext _dbContext;
 
@@ -18,14 +19,25 @@ namespace MyApp.Infrastructure.Repository
             _dbContext = dbContext;
         }
 
-        public Task<BlotterDefendant> AddBlotterDefendantAsync(BlotterDefendant dto)
+        public async Task<BlotterResident> AddBlotterResidentAsync(BlotterResident dto)
         {
-            throw new NotImplementedException();
+            await _dbContext.BlottersResident.AddAsync(dto);
+            await _dbContext.SaveChangesAsync();
+
+            return dto;
         }
 
-        public Task<bool> DeleteBlotterDefendantAsync(int id)
+        public async Task<bool> DeleteBlotterResidentAsync(int id)
         {
-            throw new NotImplementedException();
+            var blotterResident = await _dbContext.BlottersResident.FirstOrDefaultAsync(b => b.BlotterId == id);
+
+            if (blotterResident == null)
+                return false;
+
+            _dbContext.BlottersResident.Remove(blotterResident);
+            await _dbContext.SaveChangesAsync();
+
+            return true;
         }
     }
 }
