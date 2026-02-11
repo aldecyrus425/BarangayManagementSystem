@@ -16,7 +16,7 @@ namespace MyApp.Application.DTO
         public string DefendantAddress { get; set; }
         public string DefendantContact { get; set; }
 
-        public GetUserDTO User { get; set; }
+        public GetResidentDTO Resident { get; set; }
         public int UserId { get; set; }
     }
 
@@ -27,10 +27,13 @@ namespace MyApp.Application.DTO
         public int DefendantAge { get; set; }
         public string DefendantAddress { get; set; }
         public string DefendantContact { get; set; }
+        public int UserID { get; set; }
     }
 
     public class updateDefendantDTO
     {
+        public int DefendantId { get; set; }
+
         public string DefendantFirstName { get; set; }
         public string DefendantLastName { get; set; }
         public int DefendantAge { get; set; }

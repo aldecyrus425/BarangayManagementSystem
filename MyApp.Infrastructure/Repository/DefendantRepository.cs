@@ -24,7 +24,9 @@ namespace MyApp.Infrastructure.Repository
             await _context.Defendant.AddAsync(dto);
             await _context.SaveChangesAsync();
 
-            return dto;
+            return await _context.Defendant
+                .Include(d => d.Resident)
+                .FirstAsync(d => d.DefendantId == dto.DefendantId);
         }
 
         public async Task<bool> DeleteDefendantAsync(int id)
