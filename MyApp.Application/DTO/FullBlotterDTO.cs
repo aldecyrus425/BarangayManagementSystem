@@ -14,6 +14,7 @@ namespace MyApp.Application.DTO
         public string BlotterStatus { get; set; }
         public string LocationOfIncidence { get; set; }
         public DateTime SettlementDate { get; set; }
+        public int UserId { get; set; }
 
         public AddComplainantDTO Complainant { get; set; }
         public DefendantDTO Defendant { get; set; }
