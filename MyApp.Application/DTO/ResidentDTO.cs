@@ -30,6 +30,13 @@ namespace MyApp.Application.DTO
         public int UserId { get; set; }
     }
 
+    public class GetResidentDTO
+    {
+        public string FirstName { get; set; }
+        public string? MiddleName { get; set; } = "";
+        public string LastName { get; set; }
+    }
+
     public class AddResidentDTO
     {
         public string FirstName { get; set; }

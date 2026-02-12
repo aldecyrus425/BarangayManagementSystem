@@ -26,6 +26,8 @@ namespace MyApp.Application.DTO
         public int ComplainantAge { get; set; }
         public string ComplainantAddress { get; set; }
         public string ComplainantContact { get; set; }
+
+        public int UserId { get; set; }
     }
 
     public class UpdateComplainantDTO

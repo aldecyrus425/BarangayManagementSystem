@@ -20,8 +20,13 @@ namespace MyApp.Domain.Entities
 
         protected Complainant() { }
 
-        public Complainant(string complainantFirstName, string complainantLastName, int complainantAge, string complainantAddress, string complainantContact)
+        public Complainant(string complainantFirstName, string complainantLastName, int complainantAge, string complainantAddress, string complainantContact, int userID)
         {
+            if(userID <= 0)
+            {
+                throw new ArgumentOutOfRangeException("Invalid user id.");
+            }
+
             if (string.IsNullOrWhiteSpace(complainantFirstName))
                 throw new ArgumentException("Complainant first name is required.");
 
@@ -37,6 +42,7 @@ namespace MyApp.Domain.Entities
             if (string.IsNullOrWhiteSpace(complainantContact))
                 throw new ArgumentException("Complainant contact is required.");
 
+            UserId = userID;
             ComplainantFirstName = complainantFirstName;
             ComplainantLastName = complainantLastName;
             ComplainantAge = complainantAge;

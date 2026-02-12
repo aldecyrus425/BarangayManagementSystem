@@ -2,8 +2,6 @@ C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Application\bin\Debug\
 C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Application\bin\Debug\net9.0\MyApp.Application.dll
 C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Application\bin\Debug\net9.0\MyApp.Application.pdb
 C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Application\bin\Debug\net9.0\MyApp.Domain.dll
-C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Application\bin\Debug\net9.0\MyApp.Infrastructure.dll
-C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Application\bin\Debug\net9.0\MyApp.Infrastructure.pdb
 C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Application\bin\Debug\net9.0\MyApp.Domain.pdb
 C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Application\obj\Debug\net9.0\MyApp.Application.csproj.AssemblyReference.cache
 C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Application\obj\Debug\net9.0\MyApp.Application.GeneratedMSBuildEditorConfig.editorconfig
