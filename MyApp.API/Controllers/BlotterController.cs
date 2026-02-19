@@ -22,7 +22,7 @@ namespace MyApp.API.Controllers
             try
             {
                 var registerBlotter = await _blotterRegistration.RegisterBlotter(blotterDTO);
-                if(registerBlotter.Success)
+                if (registerBlotter.Success)
                 {
                     return BadRequest(registerBlotter.Message);
                 }
@@ -32,6 +32,39 @@ namespace MyApp.API.Controllers
             catch (ArgumentException ex)
             {
                 return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllBlotter()
+        {
+            try
+            {
+                var blotter = await _blotterServices.GetBlotterAsync();
+                return Ok(blotter);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetBlotterByID(int id)
+        {
+            try
+            {
+                var blotter = await _blotterServices.GetBlotterByIDAsync(id);
+                if(!blotter.Success)
+                {
+                    return NotFound(blotter.Message);
+                }
+
+                return Ok(blotter);
             }
             catch (Exception ex)
             {

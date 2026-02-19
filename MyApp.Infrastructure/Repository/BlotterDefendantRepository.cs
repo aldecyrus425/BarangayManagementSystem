@@ -13,7 +13,6 @@ namespace MyApp.Infrastructure.Repository
     public class BlotterDefendantRepository : IBlotterDefendantRepository
     {
         private readonly ApplicationDBContext _context;
-
         public BlotterDefendantRepository(ApplicationDBContext context)
         {
             _context = context;
