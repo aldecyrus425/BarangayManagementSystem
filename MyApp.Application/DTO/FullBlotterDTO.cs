@@ -17,7 +17,7 @@ namespace MyApp.Application.DTO
         public int UserId { get; set; }
 
         public AddComplainantDTO Complainant { get; set; }
-        public DefendantDTO Defendant { get; set; }
+        public AddDefendantDTO Defendant { get; set; }
 
     }
 }

@@ -18,16 +18,14 @@ namespace MyApp.Application.Services
         private readonly IDefendantServices _defendantServices;
         private readonly IComplainantServices _complainantServices;
         private readonly IBlotterDefendantServices _blotterDefendantServices;
-        private readonly IBlotterResidentServices _blotterResidentServices;
 
-        public BlotterRegistration(IUnitOfWork unitOfWork, IBlotterServices blotterServices, IDefendantServices defendantServices, IComplainantServices complainantServices, IBlotterDefendantServices blotterDefendantServices, IBlotterResidentServices blotterResidentServices)
+        public BlotterRegistration(IUnitOfWork unitOfWork, IBlotterServices blotterServices, IDefendantServices defendantServices, IComplainantServices complainantServices, IBlotterDefendantServices blotterDefendantServices)
         {
             _unitOfWork = unitOfWork;
             _blotterServices = blotterServices;
             _defendantServices = defendantServices;
             _complainantServices = complainantServices;
             _blotterDefendantServices = blotterDefendantServices;
-            _blotterResidentServices = blotterResidentServices;
         }
 
         public async Task<ResponseDTO<FullBlotterDTO>> RegisterBlotter(FullBlotterDTO dto)
@@ -39,38 +37,58 @@ namespace MyApp.Application.Services
             {
                 var complainant = new AddComplainantDTO
                 {
-
+                    ComplainantFirstName = dto.Complainant.ComplainantFirstName,
+                    ComplainantLastName = dto.Complainant.ComplainantLastName,
+                    ComplainantAge = dto.Complainant.ComplainantAge,
+                    ComplainantAddress = dto.Complainant.ComplainantAddress,
+                    ComplainantContact = dto.Complainant.ComplainantContact
                 };
 
                 var addComplainant = await _complainantServices.AddComplainantAsync(complainant);
 
                 var blotter = new AddBlotterDTO
                 {
-
+                    BlotterDate = dto.BlotterDate,
+                    BlotterComplaint = dto.BlotterComplaint,
+                    BlotterActionTaken = dto.BlotterActionTaken,
+                    BlotterStatus = dto.BlotterStatus,
+                    LocationOfIncidence = dto.LocationOfIncidence,
+                    SettlementDate = dto.SettlementDate,
+                    ComplainantId = addComplainant.Data.ComplainantId,
+                    UserId = dto.UserId
                 };
                 var addBlotter = await _blotterServices.AddBlotterAsync(blotter);
 
                 var defendant = new AddDefendantDTO
                 {
-
+                    DefendantFirstName = dto.Defendant.DefendantFirstName,
+                    DefendantLastName = dto.Defendant.DefendantLastName,
+                    DefendantAge = dto.Defendant.DefendantAge,
+                    DefendantAddress = dto.Defendant.DefendantAddress,
+                    DefendantContact = dto.Defendant.DefendantContact,
+                    UserID = dto.UserId
                 };
 
                 var addDefendant = await _defendantServices.AddDefendantAsync(defendant);
 
                 var blotterDefendant = new AddBlotterDefendantDTO
                 {
-
+                    BlotterId = addBlotter.Data.BlotterId,
+                    DefendantId = addDefendant.Data.DefendantId,
+                    UserId = addDefendant.Data.UserId,
                 };
 
                 var addBlotterDefendant = await _blotterDefendantServices.AddBlotterDefendantAsync(blotterDefendant);
 
-                var blotterResident = new AddBlotterResidentDTO
+                if(!addComplainant.Success || !addBlotter.Success || !addDefendant.Success)
                 {
-
-                };
-
-                var addBlotterResident = await _blotterResidentServices.AddBlotterResidentAsync(blotterResident);
-
+                    await _unitOfWork.RollbackAsync();
+                    return new ResponseDTO<FullBlotterDTO>
+                    {
+                        Success = false,
+                        Message = "Something went wrong with adding blotter."
+                    };
+                }
 
                 await _unitOfWork.CommitAsync();
 
@@ -78,14 +96,11 @@ namespace MyApp.Application.Services
                 {
                     Success = true,
                     Message = "Blotter added successfully.",
-                    Data = new FullBlotterDTO
-                    {
-
-                    }
+                    Data = dto
                 };
 
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 await _unitOfWork.RollbackAsync();
 

@@ -19,6 +19,10 @@ namespace MyApp.Application.Services
             _blotterRepository = blotterRepository;
         }
 
+        public Task<ResponseDTO<BlotterDTO>> AddBlotterAsync(AddBlotterDTO dto)
+        {
+            throw new NotImplementedException();
+        }
 
         public async Task<ResponseDTO<BlotterDTO>> DeleteBlotterAsync(int id)
         {

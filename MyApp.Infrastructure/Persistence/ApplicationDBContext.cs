@@ -16,7 +16,6 @@ namespace MyApp.Infrastructure.Persistence
         public DbSet<User> Users { get; set; }
         public DbSet<Blotter> Blotters { get; set; }
         public DbSet<BlotterDefendant> BlottersDefendant { get; set; }
-        public DbSet<BlotterResident> BlottersResident { get; set; }
         public DbSet<Complainant> Complainants { get; set; }
         public DbSet<Defendant> Defendant { get; set; }
         public DbSet<Logs> Logs { get; set; }
