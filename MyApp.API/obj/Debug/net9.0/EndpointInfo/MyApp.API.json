@@ -5,6 +5,37 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/blotter": {
+      "post": {
+        "tags": [
+          "Blotter"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FullBlotterDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FullBlotterDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FullBlotterDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/complainant": {
       "get": {
         "tags": [
@@ -519,6 +550,40 @@
           "complainantContact": {
             "type": "string",
             "nullable": true
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AddDefendantDTO": {
+        "type": "object",
+        "properties": {
+          "defendantFirstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "defendantLastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "defendantAge": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "defendantAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "defendantContact": {
+            "type": "string",
+            "nullable": true
+          },
+          "userID": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -586,6 +651,46 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "FullBlotterDTO": {
+        "type": "object",
+        "properties": {
+          "blotterDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "blotterComplaint": {
+            "type": "string",
+            "nullable": true
+          },
+          "blotterActionTaken": {
+            "type": "string",
+            "nullable": true
+          },
+          "blotterStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "locationOfIncidence": {
+            "type": "string",
+            "nullable": true
+          },
+          "settlementDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "complainant": {
+            "$ref": "#/components/schemas/AddComplainantDTO"
+          },
+          "defendant": {
+            "$ref": "#/components/schemas/AddDefendantDTO"
+          }
+        },
+        "additionalProperties": false
       },
       "Gender": {
         "enum": [

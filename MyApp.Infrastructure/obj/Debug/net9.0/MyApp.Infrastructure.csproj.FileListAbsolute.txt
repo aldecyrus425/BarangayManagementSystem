@@ -36,3 +36,5 @@ C:\Users\aldec\Source\Repos\BarangayManagementSystem\MyApp.Infrastructure\bin\De
 C:\Users\aldec\Source\Repos\BarangayManagementSystem\MyApp.Infrastructure\obj\Debug\net9.0\MyApp.In.4513676F.Up2Date
 C:\Users\aldec\Source\Repos\BarangayManagementSystem\MyApp.Infrastructure\obj\Debug\net9.0\MyApp.Infrastructure.genruntimeconfig.cache
 C:\Users\aldec\Source\Repos\BarangayManagementSystem\MyApp.Infrastructure\obj\Debug\net9.0\ref\MyApp.Infrastructure.dll
+C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Infrastructure\bin\Debug\net9.0\MyApp.Application.dll
+C:\Users\User\source\repos\BarangayManagementSystem\MyApp.Infrastructure\bin\Debug\net9.0\MyApp.Application.pdb

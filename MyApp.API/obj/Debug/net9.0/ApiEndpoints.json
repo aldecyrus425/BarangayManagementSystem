@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "MyApp.API.Controllers.BlotterController",
+    "Method": "BlotterRegistration",
+    "RelativePath": "api/blotter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "blotterDTO",
+        "Type": "MyApp.Application.DTO.FullBlotterDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MyApp.API.Controllers.ComplainantController",
     "Method": "GetAllComplainant",
     "RelativePath": "api/complainant",
